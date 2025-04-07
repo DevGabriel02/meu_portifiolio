@@ -22,6 +22,8 @@ html {
 
 body {
   font-family: "Poppins", sans-serif;
+  color: #fff;
+  background-color: #fff;
 }
 
 #header {
@@ -31,7 +33,7 @@ body {
 
   width: 100%;
 
-  padding: 15px 30px;
+  padding: 20px 100px;
   position: fixed;
 
   background: "transparent";
@@ -64,7 +66,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-around;
-
   width: 100%;
 }
 
@@ -76,11 +77,30 @@ body {
 .navbar-links li a {
   text-decoration: none;
   color: var(--color-white);
-
   font-size: 1.4rem;
   font-weight: 700;
+  position: relative; /* Necessário para o posicionamento da linha abaixo */
+  padding-bottom: 5px; /* Espaço entre o texto e a linha */
 }
 
+/* Adicionando a linha sob o link ao passar o mouse */
+.navbar-links li a::after {
+  content: ''; /* Cria o pseudo-elemento */
+  position: absolute;
+  bottom: 0; /* Posiciona a linha na parte inferior do link */
+  left: 0; /* Alinha a linha à esquerda */
+  width: 0%; /* A linha começa com largura 0 */
+  height: 2px; /* Espessura da linha */
+  background-color: var(--color-white); /* Cor da linha */
+  transition: width 0.3s ease; /* Transição suave */
+}
+
+/* A linha se expande ao passar o mouse sobre o link */
+.navbar-links li a:hover::after {
+  width: 100%; /* A linha se expande para a largura do link */
+}
+
+/* Estilo do menu hambúrguer e outros estilos */
 .menu-hamburguer {
   display: none;
 }
@@ -94,31 +114,25 @@ body {
   .navbar-links {
     display: flex;
     flex-direction: column;
-
     width: 50%;
     height: 100vh;
-
     position: fixed;
     right: 0;
     top: 0;
     background: #333;
     clip-path: circle(100px at 90% -20%);
-
     pointer-events: none;
     transition: 0.6s ease-out;
   }
 
   .menu-hamburguer {
     display: block;
-
     padding: 0;
     margin-bottom: 0.4rem;
     border: none;
     border-top: 3px solid var(--color-white);
-
     background: transparent;
     transition: all 0.3s ease-in-out;
-
     z-index: 1;
   }
 
@@ -133,14 +147,11 @@ body {
     display: block;
     width: 25px;
     height: 3px;
-
     margin-top: 0.6rem;
-
     background: var(--color-white);
   }
 
   /* ATIVO */
-
   .navbar.active .navbar-links {
     clip-path: circle(1400px at 90% -18%);
     pointer-events: all;
