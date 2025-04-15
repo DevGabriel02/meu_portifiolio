@@ -23,6 +23,10 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      />
 
     <link rel="stylesheet" href="styles.css" />
     <title>Portfólio - Gabriel Augusto</title>
@@ -48,7 +52,6 @@
     </section>
     <!-- End Header -->
 
-    <!-- Person -->
     <section id="person">
       <div class="person-content">
         <div class="person-name">
@@ -56,105 +59,43 @@
           <h1>Meu nome é <span></span></h1>
           <h1>Gabriel Augusto<span></span></h1>
         </div>
-
-        <div class="stacks-content">
-          <h3>Techs :</h3>
-
-          <ul class="stacks">
-            <li>
-              <div data="HTML">
-                <img src="./svg/html.svg" alt="html-icon" />
-              </div>
-            </li>
-
-            <li>
-              <div data="CSS">
-                <img src="./svg/css.svg" alt="css-icon" />
-              </div>
-            </li>
-
-            <li>
-              <div data="JS">
-                <img src="./svg/js.svg" alt="js-icon" />
-              </div>
-            </li>
-
-            <li>
-              <div data="REACT">
-                <img src="./svg/react.svg" alt="react-icon" />
-              </div>
-            </li>
-
-            <li>
-              <div data="NODE">
-                <img src="./svg/node.svg" alt="node-icon" />
-              </div>
-            </li>
-          </ul>
-        </div>
       </div>
 
-      <div class="person-background">
-        <div class="wrapper-profile-photo">
-          <img
-            class="profile-photo"
-            src="./img/foto-ivo.jpg"
-            alt="foto-ivojr"
-          />
-        </div>
-
-        <div class="links">
-          <a href="https://github.com/Ivo-Jr" target="_blank">
-            <img src="./svg/logo-github.svg" alt="icon-github" />
-          </a>
-          <a href="https://www.instagram.com/_ivo.jr/" target="_blank">
-            <img src="./svg/logo-insta.svg" alt="icon-insta" />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/ivo-junior-658136145/"
-            target="_blank"
-          >
-            <img src="./svg/logo-linkedin.svg" alt="icon-linkin" />
-          </a>
-        </div>
+      <div class="circle">
+        <img src="sua-imagem.jpg" alt="Imagem de perfil" />
       </div>
     </section>
-    <!-- End Person -->
+ 
 
     <!-- About -->
     <section id="about">
-      <div class="background-about">
-        <div class="img-wrapper">
-          <img src="../meu_portifiolio/imgs/fundo_img.jfif" alt="fundo" />
-        </div>
-      </div>
-
-      <div class="box-about">
+          <div class="box-about">
         <div class="section-subtitle">
           <h2>
-            <p>💻</p>
-            <p><span>Desenvolvedor</span> Full Stack</p>
+            <p>Sobre Mim</p>
+            <br>
           </h2>
         </div>
 
-        <h3>
-          Sou um Desenvolvedor Full Stack com experiências em
-          <p>JavaScript, ColdFusion, Angular, React.Js e Node.Js</p>
+        <h3> 
+          <b>Olá, sou Gabriel Augusto, desenvolvedor Full Stack com sólida experiência em desenvolvimento web e mobile, voltado para a criação de soluções eficientes, escaláveis e centradas na experiência do usuário.</b>
+<b>Tenho atuado em ambientes colaborativos utilizando metodologias ágeis como Scrum, Kanban e Azure DevOps, contribuindo ativamente para entregas organizadas, rápidas e com alto padrão de qualidade.</b>
+<b>Natural de Barueri-SP, sou graduado em Análise e Desenvolvimento de Sistemas pela UNIP e atualmente curso Pós-Graduação em Gestão de Projetos pela USP.</b>
+<b>Acredito no poder da tecnologia como agente de transformação, e busco constantemente aprimorar minhas habilidades para desenvolver produtos que impactem positivamente empresas e pessoas.</b>
         </h3>
-
-        <h4>Meu nome é Gabriel Augusto,</h4>
 
         <h4>
           Abaixo está o meu
           <p>currículo</p>
           para download.
+          
         </h4>
 
         <div class="button-cta">
           <a
             href="public/document/curriculo-ivoJr.pdf"
             download="CV-Ivo-Junior"
-            aria-label="Baixar curriculo Ivo Junior"
+            aria-label=""
           >
             Currículo
           </a>
@@ -162,6 +103,67 @@
       </div>
     </section>
     <!-- End about -->
+
+    <section id="Skills">
+      <div class="Skills-tittle">
+        <h2>Habilidades</h2>
+      </div>
+      <br>
+    <div class="skills-container">
+      <div class="skill-box">
+        <i class="fab fa-html5"></i>
+        <p>HTML5</p>
+      </div>
+      <div class="skill-box">
+        <i class="fab fa-css3-alt"></i>
+        <p>CSS3</p>
+      </div>
+      <div class="skill-box">
+        <i class="fab fa-angular"></i>
+        <p>Angular</p>
+      </div>
+      <div class="skill-box">
+        <i class="fab fa-react"></i>
+        <p>React</p>
+      </div>
+      <div class="skill-box">
+        <i class="fab fa-node"></i>
+        <p>Node.js</p>
+      </div>
+      <div class="skill-box">
+        <i class="fab fa-bootstrap"></i>
+        <p>Bootstrap</p>
+      </div>
+    </div>
+  <br><br>
+    <!-- Segunda linha de tecnologias -->
+    <div class="skills-container">
+      <div class="skill-box">
+        <i class="fab fa-js-square"></i>
+        <p>JavaScript</p>
+      </div>
+      <div class="skill-box">
+        <i class="fas fa-code"></i>
+        <p>TypeScript</p>
+      </div>
+      <div class="skill-box">
+        <i class="fas fa-fire"></i> <!-- Ícone genérico para ColdFusion -->
+        <p>ColdFusion</p>
+      </div>
+      <div class="skill-box">
+        <i class="fas fa-database"></i>
+        <p>SQL Server</p>
+      </div>
+      <div class="skill-box">
+        <i class="fas fa-database"></i>
+        <p>MySQL</p>
+      </div>
+      <div class="skill-box">
+        <i class="fab fa-figma"></i>
+        <p>Figma</p>
+      </div>
+    </div>
+  </section>
 
     <!-- Projects -->
     <section id="projects">
