@@ -76,12 +76,10 @@
             <br>
           </h2>
         </div>
-
         <h3> 
-          <b>Olá, sou Gabriel Augusto, desenvolvedor Full Stack com sólida experiência em desenvolvimento web e mobile, voltado para a criação de soluções eficientes, escaláveis e centradas na experiência do usuário.</b>
-<b>Tenho atuado em ambientes colaborativos utilizando metodologias ágeis como Scrum, Kanban e Azure DevOps, contribuindo ativamente para entregas organizadas, rápidas e com alto padrão de qualidade.</b>
-<b>Natural de Barueri-SP, sou graduado em Análise e Desenvolvimento de Sistemas pela UNIP e atualmente curso Pós-Graduação em Gestão de Projetos pela USP.</b>
-<b>Acredito no poder da tecnologia como agente de transformação, e busco constantemente aprimorar minhas habilidades para desenvolver produtos que impactem positivamente empresas e pessoas.</b>
+          <b>Olá, sou Gabriel Augusto, desenvolvedor Full Stack com sólida experiência em desenvolvimento web e mobile, voltado para a criação de soluções eficientes, escaláveis e centradas na experiência do usuário. Tenho atuado em ambientes colaborativos utilizando metodologias ágeis como Scrum, Kanban e Azure DevOps, contribuindo ativamente para entregas organizadas, rápidas e com alto padrão de qualidade.</b>
+            Natural de Barueri-SP, sou graduado em Análise e Desenvolvimento de Sistemas pela UNIP e atualmente curso Pós-Graduação em Gestão de Projetos pela USP.
+            Acredito no poder da tecnologia como agente de transformação, e busco constantemente aprimorar minhas habilidades para desenvolver produtos que impactem positivamente empresas e pessoas.
         </h3>
 
         <h4>
@@ -94,7 +92,7 @@
         <div class="button-cta">
           <a
             href="public/document/curriculo-ivoJr.pdf"
-            download="CV-Ivo-Junior"
+            download="CV-Gabriel-Augusto"
             aria-label=""
           >
             Currículo
@@ -301,28 +299,44 @@
       <div class="contact-icon-content">
         <h2>Contato 📞</h2>
       </div>
-
-      <div class="contact-icons-wrapper">
+        <div class="contact-icons-wrapper">
+          <div class="contact-icon-content">
+            <div class="contact-icon">
+              <i class="fa-solid fa-map-location-dot"></i>
+            </div>
+            <div class="contact-info">
+              <span>Localização</span>
+              <p>Barueri-SP, Brasil</p>
+            </div>
+          </div>
+          <div class="contact-icon-content">
+            <div class="contact-icon">
+              <i class="fa-solid fa-envelope-open-text"></i>
+            </div>
+            <div class="contact-info">
+              <span>E-mail</span>
+              <a href="mailto:devgabriel02"> devgabriel02@gmail.com </a>
+            </div>
+          </div>
         <div class="contact-icon-content">
           <div class="contact-icon">
-            <i class="fa-solid fa-map-location-dot"></i>
+            <i class="fa-brands fa-linkedin"></i>
           </div>
           <div class="contact-info">
-            <span>Localização</span>
-            <p>São Paulo, Brasil</p>
+            <span>LinkedIn</span>
+            <a href="https://www.linkedin.com/in/devgabriel02/" target="_blank">linkedin.com/in/devgabriel02</a>
           </div>
         </div>
-
         <div class="contact-icon-content">
           <div class="contact-icon">
-            <i class="fa-solid fa-envelope-open-text"></i>
+            <i class="fa-brands fa-github"></i>
           </div>
           <div class="contact-info">
-            <span>E-mail</span>
-            <a href="mailto:devgabriel02"> devgabriel02@gmail.com </a>
+            <span>GitHub</span>
+            <a href="https://github.com/devgabriel02" target="_blank">github.com/devgabriel02</a>
           </div>
         </div>
-      </div>
+    <div>
     </section>
 
     <!-- Footer -->
@@ -336,5 +350,21 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
     <script src="scripts.js"></script>
+    <script>
+      const boxAbout = document.querySelector(".box-about");
+    
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target); // Para de observar depois que aparece
+          }
+        });
+      }, {
+        threshold: 0.3
+      });
+    
+      observer.observe(boxAbout);
+    </script>
   </body>
 </html>

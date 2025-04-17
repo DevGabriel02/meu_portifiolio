@@ -517,16 +517,7 @@ body {
   object-fit: cover;
 }
 
-.box-about {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
 
-  width: 50%;
-
-  padding: 3rem;
-  margin: 6rem 0rem;
-}
 
 .section-subtitle h2 p {
   display: inline-block;
@@ -541,32 +532,38 @@ body {
   background: var(--color-white);
 }
 
-.box-about h3 {
-  margin: 3rem;
-  font-size: calc(0.8vw + 0.8rem);
+.box-about {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  width: 90%;
+  padding: 3rem;
+  margin: 6rem 0rem;
+
+  /* Animação de entrada */
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-.box-about h3 p {
-  display: inline-block;
+.box-about {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 
-  width: fit-content;
-  padding: 2px 4px;
-  border-radius: 4px;
+  width: 90%;
+  padding: 3rem;
+  margin: 6rem 0rem;
 
-  color: var(--color-black);
-  background: var(--color-pink);
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-.box-about h4 {
-  margin: 1rem 3rem;
-  font-size: calc(0.8vw + 0.5rem);
-}
-
-.box-about h4 p {
-  display: inline;
-  padding: 2px 4px;
-
-  color: var(--color-blue);
+.box-about.visible {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .button-cta {
@@ -999,8 +996,8 @@ body {
 }
 
 .contact-icon {
-  height: 40px;
-  width: 40px;
+  height: 65px;
+  width: 65px;
 
   display: flex;
   justify-content: center;
@@ -1014,7 +1011,7 @@ body {
 }
 
 .contact-icon i {
-  font-size: 2rem;
+  font-size: 4rem;
   color: var(--color-blue);
 }
 
