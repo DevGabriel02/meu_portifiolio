@@ -51,7 +51,6 @@
         </ul>
       </nav>
     </section>
-    <!-- End Header -->
 
     <section id="person">
       <div class="person-content">
@@ -69,30 +68,19 @@
  
 
     <!-- Sobre Mim -->
-    <section id="about">
-          <div class="box-about">
-        <div class="section-subtitle">
-          <h2>
-            <p>Sobre Mim</p>
-            <br>
-          </h2>
-        </div>
-        <h3> 
-          <b> Olá, sou Gabriel Augusto, desenvolvedor Full Stack com sólida experiência em desenvolvimento web e mobile, voltado para a criação de soluções eficientes, escaláveis e centradas na experiência do usuário. Tenho atuado em ambientes colaborativos utilizando metodologias ágeis como Scrum, Kanban e Azure DevOps, contribuindo ativamente para entregas organizadas, rápidas e com alto padrão de qualidade.</b>
-          Natural de Barueri-SP, sou graduado em Análise e Desenvolvimento de Sistemas pela UNIP e atualmente curso Pós-Graduação em Gestão de Projetos pela USP.
-          Acredito no poder da tecnologia como agente de transformação, e busco constantemente aprimorar minhas habilidades para desenvolver produtos que impactem positivamente empresas e pessoas.
-        </h3>
-        <h4>
-          Abaixo está o meu currículo para download.
-        </h4>
-        <div class="button-cta">
-          <a href="public/document/Curriculo_Gabriel.pdf" download="CV-Gabriel-Augusto"aria-label="">
-            Currículo
-          </a>
-        </div>
+    <section id="ga-about-section" class="ga-container ga-about-animate">
+      <h2 class="ga-title">Sobre Mim</h2>
+      <p class="ga-paragraph"><strong>Gabriel Augusto</strong>, desenvolvedor Full Stack com sólida experiência em desenvolvimento web e mobile, voltado para a criação de soluções eficientes, escaláveis e centradas na experiência do usuário.</p>
+      <p class="ga-paragraph">Tenho atuado em ambientes colaborativos utilizando metodologias ágeis como Scrum, Kanban e Azure DevOps, contribuindo ativamente para entregas organizadas, rápidas e com alto padrão de qualidade.</p>
+      <p class="ga-paragraph">Natural de Barueri-SP, sou graduado em Análise e Desenvolvimento de Sistemas pela UNIP e atualmente curso Pós-Graduação em Gestão de Projetos pela USP.</p>
+      <p class="ga-paragraph">Acredito no poder da tecnologia como agente de transformação, e busco constantemente aprimorar minhas habilidades para desenvolver produtos que impactem positivamente empresas e pessoas.</p>
+      <div class="button-cta">
+        <a href="public/document/Curriculo_Gabriel.pdf" download="CV-Gabriel-Augusto"aria-label="">
+          Currículo
+        </a>
       </div>
     </section>
-
+  
      <!-- Habilidades -->
 
     <section id="Skills">
@@ -432,9 +420,8 @@
     <!-- Footer -->
     <section id="footer">
       <div class="container-footer">
-        <h2>Projetado desenvolvido com 💜 por</h2>
-        <h3><strong>Gabriel Augusto</strong> — Desenvolvedor Full Stack</h3>
-        <p>Transformando ideias em experiências digitais únicas.</p>
+        <h2>Projeto desenvolvido com 💜 por</h2>
+        <p><strong>Gabriel Augusto - Desenvolvedor Full Stack</strong></p>
       </div>
     </section>>
 
@@ -445,7 +432,7 @@
 
     <script src="scripts.js"></script>
     <script>
-      const boxAbout = document.querySelector(".box-about");
+      const boxAbout = document.querySelector(".ga-about-section");
     
       const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
@@ -487,6 +474,20 @@
         button.innerText = isVisible ? "Saiba mais" : "Ver menos";
       }
     </script>
+<script>
+  const gaSection = document.getElementById('ga-about-section');
 
+  const gaRevealOnScroll = () => {
+    const top = gaSection.getBoundingClientRect().top;
+    const height = window.innerHeight;
+
+    if (top < height - 50) {
+      gaSection.classList.add('visible');
+    }
+  };
+
+  window.addEventListener('scroll', gaRevealOnScroll);
+  window.addEventListener('load', gaRevealOnScroll);
+</script>
   </body>
 </html>
