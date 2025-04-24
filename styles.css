@@ -3,27 +3,27 @@
 
 /* Scrollbar para navegadores baseados em Webkit (Chrome, Edge, Brave, Opera) */
 ::-webkit-scrollbar {
-  width: 4px; /* ← AQUI você controla a largura da barra vertical */
-  height: 4px; /* ← Se quiser controlar a horizontal também */
+  width: 4px; 
+  height: 4px; 
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #4b0082; /* fundo da barra - roxo escuro */
+  background-color: #4b0082; 
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #a64dff; /* barra de rolagem - roxo claro */
+  background-color: #a64dff; 
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #c58dff; /* efeito hover mais claro */
+  background-color: #c58dff; 
 }
 
 /* Scrollbar para Firefox */
 html {
-  scrollbar-width: thin; /* "thin", "auto" ou "none" */
-  scrollbar-color: #a64dff #4b0082; /* thumb / track */
+  scrollbar-width: thin; 
+  scrollbar-color: #a64dff #4b0082; 
 }
 
 * {
@@ -49,6 +49,7 @@ html {
 body {
   font-family: "Poppins", sans-serif;
 }
+
 /* Sobre mim */
 .ga-container {
   padding: 60px 20px;
@@ -71,7 +72,6 @@ body {
   margin-bottom: 20px;
 }
 
-/* Animação: aparece ao entrar na tela */
 .ga-about-animate {
   opacity: 0;
   transform: translateY(40px);
@@ -120,15 +120,32 @@ body {
   text-decoration: none;
   color: #fff;
   position: relative;
+  transition: color 0.3s ease;
+}
+
+.header-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px; 
+  width: 0;
+  height: 2px;
+  background-color: #a64dff;
+  transition: width 0.3s ease;
+}
+
+.header-title:hover {
+  color: #a64dff;
+}
+
+.header-title:hover::after {
+  width: 100%;
 }
 
 .header-title h1 {
   font-size: 2rem;
   white-space: nowrap;
-}
-
-.header-title:hover {
-  color: #a64dff;
+  margin: 0;
 }
 
 .navbar {
@@ -144,6 +161,7 @@ body {
 }
 
 .navbar-links a {
+  position: relative;
   font-size: 2rem;
   text-decoration: none;
   color: #fff;
@@ -151,13 +169,28 @@ body {
   transition: color 0.3s ease;
 }
 
+.navbar-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px; /* distância da linha abaixo do texto */
+  width: 0;
+  height: 2px;
+  background-color: #a64dff;
+  transition: width 0.3s ease;
+}
+
 .navbar-links a:hover {
   color: #a64dff;
 }
 
-/* Exemplo para evitar que o conteúdo fique escondido atrás da navbar */
+.navbar-links a:hover::after {
+  width: 100%;
+}
+
+
 main, section, #person {
-  padding-top: 100px; /* ajuste conforme a altura real do header */
+  padding-top: 100px; 
 }
 
 /* Menu hamburguer */
@@ -248,12 +281,13 @@ main, section, #person {
     color: #a64dff;
   }
 
-  /* Esconde a navbar padrão no mobile */
+ 
   .navbar {
     display: none;
   }
 }
 
+  /*perfil*/
 #person {
   width: 100%;
   background: var(--color-black);
@@ -264,7 +298,7 @@ main, section, #person {
   padding: 2rem 1rem;
 
   gap: 2rem;
-  flex-wrap: nowrap; /* sempre lado a lado */
+  flex-wrap: nowrap; 
   flex-direction: row;
   
 }
@@ -702,7 +736,7 @@ main, section, #person {
 }
 
 .skill-box {
-  background: #f4f4f4;
+  background: #1a1a1a;
   border: 2px solid #a64dff;
   width: 146px;
   height: 146px;
@@ -718,13 +752,13 @@ main, section, #person {
 .skill-box i {
   font-size: 6rem;
   margin-bottom: 10px;
-  color: #7a008a;
+  color: #9805b1;
 }
 
 .skill-box p {
   font-size: 0.9rem;
   font-weight: bold;
-  color: #a64dff;
+  color: #FFF;
 }
 
 .skill-box:hover {
@@ -1085,7 +1119,7 @@ main, section, #person {
   align-items: center;
   background: #1f1f1f;
   color: white;
-  border: 2px solid transparent;
+  border: 2px solid #a64dff;
   border-radius: 8px;
   padding: 0.8rem;
   gap: 1rem;
