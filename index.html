@@ -35,19 +35,38 @@
   <body>
     <!-- Header -->
     <section id="header">
-      <a class="header-title" href="/">
-        <h1>devgabriel02.com</h1>
-      </a>
+      <div class="header-container">
+        <a href="#" class="header-title"><h1>devgabriel02.com</h1></a>
     
-      <nav class="navbar" id="navbar">
-        <ul class="navbar-links">
+        <!-- Botão hamburguer -->
+        <div class="menu-toggle" id="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+    
+        <!-- Navbar padrão (desktop) -->
+        <nav class="navbar">
+          <ul class="navbar-links">
+            <li><a href="#person">Home</a></li>
+            <li><a href="#ga-about-section">Sobre</a></li>
+            <li><a href="#projects">Projetos</a></li>
+            <li><a href="#experience">Experiências</a></li>
+            <li><a href="#contacts">Contatos</a></li>
+          </ul>
+        </nav>
+      </div>
+    
+      <!-- Menu Overlay (mobile) -->
+      <div class="mobile-menu-overlay" id="mobile-menu">
+        <ul>
           <li><a href="#person">Home</a></li>
           <li><a href="#about">Sobre</a></li>
           <li><a href="#projects">Projetos</a></li>
           <li><a href="#experience">Experiências</a></li>
           <li><a href="#contacts">Contatos</a></li>
         </ul>
-      </nav>
+      </div>
     </section>
 
     <section id="person">
@@ -60,10 +79,10 @@
       </div>
     
       <div class="circle">
-        <img src="sua-imagem.jpg" alt="Imagem de perfil" />
+        <img src="imgs/img.jpeg" alt="img-conversor" />
       </div>
     </section>
- 
+    <br><br>
 
     <!-- Sobre Mim -->
     <section id="ga-about-section" class="ga-container ga-about-animate">
@@ -429,20 +448,26 @@
 
     <script src="scripts.js"></script>
     <script>
-      const boxAbout = document.querySelector(".ga-about-section");
+      document.addEventListener("DOMContentLoaded", () => {
+        const targets = document.querySelectorAll('.ga-about-animate');
     
-      const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target); // Para de observar depois que aparece
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+              } else {
+                entry.target.classList.remove('visible');
+              }
+            });
+          },
+          {
+            threshold: 0.1 // mostra ao entrar em qualquer parte da tela
           }
-        });
-      }, {
-        threshold: 0.3
-      });
+        );
     
-      observer.observe(boxAbout);
+        targets.forEach(target => observer.observe(target));
+      });
     </script>
 
     <script>
@@ -486,13 +511,23 @@
   window.addEventListener('scroll', gaRevealOnScroll);
   window.addEventListener('load', gaRevealOnScroll);
 </script>
-<script>
-  const menuToggle = document.getElementById("menu-toggle");
-  const navbar = document.getElementById("navbar");
 
-  menuToggle.addEventListener("click", () => {
-    navbar.classList.toggle("active");
-  });
-</script>
+<script>
+  const toggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    toggle.addEventListener('click', () => {
+      toggle.classList.toggle('active');
+      mobileMenu.classList.toggle('show');
+    });
+
+    // Fecha o menu ao clicar em um link
+    document.querySelectorAll('.mobile-menu-overlay a').forEach(link => {
+      link.addEventListener('click', () => {
+        toggle.classList.remove('active');
+        mobileMenu.classList.remove('show');
+      });
+    });
+  </script>
   </body>
 </html>
