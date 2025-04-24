@@ -25,24 +25,6 @@ html {
   scrollbar-width: thin; /* "thin", "auto" ou "none" */
   scrollbar-color: #a64dff #4b0082; /* thumb / track */
 }
-.circle {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 3px solid #1f5d7a;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #eee;
-  padding: 12%;
-}
-
-.circle img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
 
 * {
   margin: 0px;
@@ -110,21 +92,20 @@ body {
   }
 }
 
-/* header */
+/* Header */
 section#header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 2rem;
+  padding: 2rem;
   background-color: #111;
   flex-wrap: wrap;
 }
 
-/* Título do header com efeito hover */
+/* Título */
 .header-title {
-  margin-left: auto;
   text-decoration: none;
-  color: #FFF; 
+  color: #FFF;
   transition: color 0.3s ease;
   position: relative;
   display: inline-block;
@@ -158,21 +139,23 @@ section#header {
 .navbar {
   flex: 1;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
 /* Links da navbar */
 .navbar-links {
   display: flex;
-  gap: 1.5rem;
+  gap: 3.9rem;
   list-style: none;
+  flex-wrap: wrap; /* permite quebrar linha quando não couber */
+  justify-content: center;
 }
 
 .navbar-links a {
   position: relative;
-  font-size: 25px;
+  font-size: 20px;
   text-decoration: none;
-  color: #fff; /* Cor normal (ajustada para destacar o hover) */
+  color: #fff;
   font-weight: bold;
   transition: color 0.3s ease;
 }
@@ -196,111 +179,181 @@ section#header {
   width: 100%;
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
+/* Responsivo */
+@media (max-width: 600px) {
   section#header {
     flex-direction: column;
     align-items: center;
   }
 
-  .header-title {
-    margin-left: 0;
-    order: 2;
-    margin-top: 1rem;
-  }
-
   .navbar {
-    order: 1;
-    width: 100%;
     justify-content: center;
+    width: 100%;
   }
 
   .navbar-links {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.75rem;
+    flex-wrap: wrap; /* mantém os itens em linha se possível */
+    justify-content: center;
+    gap: 1rem;
   }
 }
 
 
 #person {
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
-
-  display: flex;
-  align-items: center;
-
   background: var(--color-black);
-}
-
-.person-content {
-  height: 100%;
-  width: 50%;
 
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 2rem 1rem;
 
-  flex-direction: column;
-
-  background: var(--color-black);
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
-.person-content div h1 {
-  padding: 0px 4px;
+.person-content {
+  flex: 1;
+  max-width: 600px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  padding: 2rem;
+}
+
+.person-name {
+  text-align: left;
+  padding: 0 1rem;
+}
+
+.person-name h1 {
   color: transparent;
+  font-size: clamp(1.8rem, 2.5vw + 1rem, 3rem);
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
 
   position: relative;
   width: fit-content;
-
-  font-size: calc(2vw + 1.5rem);
-  line-height: calc(3vw + 1.8rem);
-
   animation: written_text 0.5s ease forwards;
 }
 
-.person-content div h1:nth-child(1) {
+.person-name h1:nth-child(1) {
   animation-delay: 1s;
 }
 
-.person-content div h1:nth-child(2) {
+.person-name h1:nth-child(2) {
   animation-delay: 2s;
 }
 
-.person-content div h1:nth-child(3) {
+.person-name h1:nth-child(3) {
   animation: written_text_name 0.5s ease forwards;
   animation-delay: 3s;
 }
 
-.person-content div h1 span {
+.person-name h1 span {
   position: absolute;
   top: 0;
   left: 0;
-
-  width: 0px;
+  width: 0;
   height: 100%;
   background: var(--color-pink);
-
   animation: written_text_box 1s ease;
+}
+
+.person-name h1:nth-child(1) span {
   animation-delay: 0.5s;
 }
 
-.person-content div h1:nth-child(1) span {
-  animation-delay: 0.5s;
-}
-
-.person-content div h1:nth-child(2) span {
+.person-name h1:nth-child(2) span {
   animation-delay: 1.5s;
 }
 
-.person-content div h1:nth-child(3) span {
+.person-name h1:nth-child(3) span {
   animation-delay: 2.5s;
 }
 
-.person-name {
-  margin-top: 11rem;
-  padding: 0px 20px;
+.circle {
+  flex-shrink: 0;
+  width: 400px;
+  height: 400px;
+  margin-left: 2rem;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #1f5d7a;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eee;
 }
+
+.circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  #person {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .person-content {
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .person-name {
+    text-align: center;
+  }
+
+  .person-name h1 {
+    font-size: 1.8rem;
+  }
+
+  .circle {
+    margin-left: 0;
+    margin-top: 1rem;
+    width: 140px;
+    height: 140px;
+  }
+}
+
+/* Animações */
+@keyframes written_text {
+  0% {
+    color: transparent;
+  }
+  100% {
+    color: white;
+  }
+}
+
+@keyframes written_text_name {
+  0% {
+    color: transparent;
+  }
+  100% {
+    color: #5200cc;
+  }
+}
+
+@keyframes written_text_box {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
 
 .stacks-content {
   display: flex;
