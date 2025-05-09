@@ -82,7 +82,7 @@
         <img src="imgs/img.jpeg" alt="img-conversor" />
       </div>
     </section>
-    <br><br>
+    <br><br><br><br>
 
     <!-- Sobre Mim -->
     <section id="ga-about-section" class="ga-container ga-about-animate">
@@ -97,6 +97,7 @@
         </a>
       </div>
     </section>
+    
   
      <!-- Habilidades -->
 
@@ -159,8 +160,9 @@
       </div>
     </div>
   </section>
-  
-  <br><br>
+
+  <br><br><br><br>
+
   <!--Projetos-->
   <section id="projetos">
     <div class ="container">
@@ -223,19 +225,23 @@
     </div>
     <section id="experience">
       <div class="experience-container">
-        <div class="experience-list">
-          <button class="experience-item active" data-company="itpower">
-            <img src="imgs/itp.png" alt="itpower" />
-            <span>IT-Power</span>
-          </button>
-          <button class="experience-item" data-company="brasil">
-            <img src="imgs/bg" alt="bg_grafica" />
-            <span>Brasil Gráfica</span>
-          </button>
-          <button class="experience-item" data-company="aprendiz">
-            <img src="imgs/images.jfif" alt="goncalves" />
-            <span>Gonçalves</span>
-          </button>
+        
+        <!-- Wrapper com rolagem lateral -->
+        <div class="experience-list-wrapper">
+          <div class="experience-list">
+            <button class="experience-item active" data-company="itpower">
+              <img src="imgs/itp.png" alt="itpower" />
+              <span>IT-Power</span>
+            </button>
+            <button class="experience-item" data-company="brasil">
+              <img src="imgs/bg" alt="bg_grafica" />
+              <span>Brasil Gráfica</span>
+            </button>
+            <button class="experience-item" data-company="aprendiz">
+              <img src="imgs/images.jfif" alt="goncalves" />
+              <span>Gonçalves</span>
+            </button>
+          </div>
         </div>
     
         <div class="experience-detail" id="itpower">
@@ -259,6 +265,7 @@
             <li>🧪 Otimização de performance, SEO e responsividade.</li>
           </ul>
         </div>
+    
         <div class="experience-detail hidden" id="aprendiz">
           <h3>Aprendiz Técnico <span>| Gonçalves Packaging </span></h3>
           <p><strong>Agosto 2018 - Agosto 2020</strong></p>
@@ -276,7 +283,7 @@
 
     <section id="education">
       <div class="education-container">
-        <h2 class="section-title">Formação Acadêmica</h2>
+        <h2 class="section-title">Formação Acadêmicas</h2>
     
         <div class="education-grid">
           <div class="education-card">
@@ -373,6 +380,32 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
     <script src="scripts.js"></script>
+
+    <script>
+      // Função para criar bolhas
+      function criarBolha() {
+        const bolha = document.createElement("div");
+        bolha.classList.add("bolha");
+  
+        const tamanho = Math.random() * 15 + 10; // Tamanho aleatório para a bolha
+        bolha.style.width = `${tamanho}px`;
+        bolha.style.height = `${tamanho}px`;
+  
+        bolha.style.left = `${Math.random() * 100}%`; // Posição aleatória para a bolha
+        bolha.style.animationDuration = `${5 + Math.random() * 5}s`; // Velocidade aleatória
+  
+        document.getElementById("bolhas-container").appendChild(bolha);
+  
+        // Remover a bolha depois de 10 segundos
+        setTimeout(() => {
+          bolha.remove();
+        }, 10000);
+      }
+  
+      // Criar bolhas a cada 300ms
+      setInterval(criarBolha, 300);
+    </script>
+    
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const targets = document.querySelectorAll('.ga-about-animate');
